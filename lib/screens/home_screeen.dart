@@ -154,7 +154,7 @@ class Home extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "YOUR HAIR ANALYSIS REPORT",
                       style: const TextStyle(
                         fontSize: 18,
@@ -162,7 +162,7 @@ class Home extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 10),
-                    Text(
+                    const Text(
                       "Your hair analysis report is ready. Click below to view it.",
                       style: const TextStyle(fontSize: 16),
                     ),
@@ -173,9 +173,9 @@ class Home extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(vertical: 16.0),
                       ),
                       onPressed: () {},
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
+                        children: [
                           Text(
                             "View Report",
                             style: TextStyle(fontSize: 18),

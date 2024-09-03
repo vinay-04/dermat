@@ -1,18 +1,5 @@
 import 'package:flutter/material.dart';
-
-class ProductModel {
-  final int productId;
-  final String productName;
-  final double productPrice;
-  final String productDescription;
-
-  ProductModel({
-    required this.productId,
-    required this.productName,
-    required this.productPrice,
-    required this.productDescription,
-  });
-}
+import 'package:dermat/components/Product.dart';
 
 class Products extends StatefulWidget {
   const Products({super.key});
@@ -22,15 +9,14 @@ class Products extends StatefulWidget {
 }
 
 class _ProductsState extends State<Products> {
+  // List of all products
   List<ProductModel> products = [];
+  // List of filtered products for search
   List<ProductModel> filteredProducts = [];
-  TextEditingController searchController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-
-    // Initialize the products list
     products = List.generate(10, (index) {
       return ProductModel(
         productId: index + 1,
@@ -39,22 +25,15 @@ class _ProductsState extends State<Products> {
         productDescription: 'Description of Product ${index + 1}',
       );
     });
-
-    // Initially display all products
-    filteredProducts = products;
-
-    // Add a listener to the search controller to filter products as user types
-    searchController.addListener(() {
-      filterProducts();
-    });
+    filteredProducts = products; // Initially, show all products
   }
 
-  void filterProducts() {
-    String query = searchController.text.toLowerCase();
+  void _filterProducts(String query) {
     setState(() {
-      filteredProducts = products.where((product) {
-        return product.productName.toLowerCase().contains(query);
-      }).toList();
+      filteredProducts = products
+          .where((product) =>
+              product.productName.toLowerCase().contains(query.toLowerCase()))
+          .toList();
     });
   }
 
@@ -64,20 +43,21 @@ class _ProductsState extends State<Products> {
       appBar: AppBar(
         title: const Text('Products'),
         bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(kToolbarHeight),
+          preferredSize: const Size.fromHeight(60.0),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-              controller: searchController,
+              onChanged: _filterProducts,
               decoration: InputDecoration(
                 hintText: 'Search products...',
                 prefixIcon: const Icon(Icons.search),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.0),
+                  borderRadius: BorderRadius.circular(20.0),
                   borderSide: BorderSide.none,
                 ),
-                fillColor: Colors.white,
                 filled: true,
+                fillColor: Colors.white,
+                contentPadding: const EdgeInsets.symmetric(horizontal: 20.0),
               ),
             ),
           ),
@@ -100,45 +80,6 @@ class _ProductsState extends State<Products> {
             productDescription: product.productDescription,
           );
         },
-      ),
-    );
-  }
-}
-
-class Product extends StatelessWidget {
-  final int productId;
-  final String productName;
-  final double productPrice;
-  final String productDescription;
-
-  const Product({
-    required this.productId,
-    required this.productName,
-    required this.productPrice,
-    required this.productDescription,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              productName,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16.0,
-              ),
-            ),
-            SizedBox(height: 8.0),
-            Text('Price: ₹$productPrice'),
-            SizedBox(height: 8.0),
-            Text(productDescription),
-          ],
-        ),
       ),
     );
   }

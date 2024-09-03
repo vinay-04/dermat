@@ -1,5 +1,6 @@
 import 'package:dermat/screens/account_screen.dart';
 import 'package:dermat/screens/home_screeen.dart';
+import 'package:dermat/screens/kit.dart';
 import 'package:dermat/screens/products.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -10,6 +11,7 @@ enum PageType {
   home,
   products,
   account,
+  kit,
 }
 
 class BottomNavbar extends ConsumerWidget {
@@ -17,9 +19,10 @@ class BottomNavbar extends ConsumerWidget {
     Home(),
     Products(),
     Account(),
+    Kit(),
   ];
 
-  const BottomNavbar({super.key});
+  const BottomNavbar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -34,6 +37,10 @@ class BottomNavbar extends ConsumerWidget {
         label: 'Products',
       ),
       const BottomNavigationBarItem(
+        icon: Icon(Icons.backpack),
+        label: 'Kit',
+      ),
+      const BottomNavigationBarItem(
         icon: Icon(Icons.account_circle),
         label: 'Account',
       ),
@@ -41,6 +48,7 @@ class BottomNavbar extends ConsumerWidget {
     return Scaffold(
       body: pages[index.index],
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed, // Set the type to fixed
         items: tabitems,
         currentIndex: index.index,
         onTap: (int tappedIndex) {

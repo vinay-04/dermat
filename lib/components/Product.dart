@@ -27,7 +27,7 @@ class Product extends StatelessWidget {
   final int productId;
   final String productName;
   final double productPrice;
-  final String productImage = "productImage.png";
+  final String productImage = "assets/productImage.png";
   final String productDescription;
 
   @override
@@ -47,8 +47,12 @@ class Product extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.network(productImage,
-                  width: 100, height: 100, fit: BoxFit.cover),
+              Image(
+                image: AssetImage(productImage),
+                width: 100,
+                height: 100,
+                fit: BoxFit.cover,
+              ),
               Text(productName),
               Text('\$${productPrice.toStringAsFixed(2)}'),
               Text(

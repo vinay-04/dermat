@@ -11,7 +11,6 @@ void main() {
   ));
 }
 
-// Provider for authentication state
 final authStateProvider = StateProvider<AuthState>((ref) => AuthState.initial);
 
 enum AuthState { initial, unauthenticated, authenticated }

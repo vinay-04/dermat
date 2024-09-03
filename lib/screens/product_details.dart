@@ -8,6 +8,8 @@ class ProductDetails extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text('Product $productId'),
             ElevatedButton(

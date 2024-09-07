@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
+    final double padding = size.width * 0.05;
     return Scaffold(
       backgroundColor: Colors.green[100],
       body: SingleChildScrollView(
@@ -16,73 +18,58 @@ class Home extends StatelessWidget {
               children: [
                 // Image Section
                 Container(
-                  height: 400,
+                  height: size.height * 0.4,
                   width: double.infinity,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(
-                        'assets/lo.png', // Placeholder image URL
-                      ),
+                      image: AssetImage('assets/lo.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
                 // Card Section on top of the Image
                 Positioned(
-                  bottom: 10,
-                  left: 20,
-                  right: 20,
+                  bottom: padding,
+                  left: padding,
+                  right: padding,
                   child: Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: const Padding(
-                      padding: EdgeInsets.all(16.0),
+                    child: Padding(
+                      padding: EdgeInsets.all(padding),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             "Hi Jeevan",
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: size.width * 0.05,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: size.height * 0.01),
                           Text(
                             "Here's what your hair analysis report says:",
-                            style: TextStyle(fontSize: 16),
+                            style: TextStyle(fontSize: size.width * 0.04),
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: size.height * 0.01),
                           Text(
                             "YOUR ROOT CAUSES",
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: size.width * 0.05,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(height: 10),
+                          SizedBox(height: size.height * 0.01),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Column(
-                                children: [
-                                  Icon(Icons.water_drop, color: Colors.yellow),
-                                  Text("DANDRUFF"),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  Icon(Icons.dns, color: Colors.yellow),
-                                  Text("GENETICS"),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  Icon(Icons.apple, color: Colors.yellow),
-                                  Text("NUTRITION"),
-                                ],
-                              ),
+                              _buildIconColumn(
+                                  context, Icons.water_drop, "DANDRUFF"),
+                              _buildIconColumn(context, Icons.dns, "GENETICS"),
+                              _buildIconColumn(
+                                  context, Icons.apple, "NUTRITION"),
                             ],
                           ),
                         ],
@@ -92,28 +79,28 @@ class Home extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            SizedBox(height: size.height * 0.02),
             // Sale Section
             Container(
-              padding: EdgeInsets.all(16.0),
+              padding: EdgeInsets.all(padding),
               color: Colors.green,
-              child: const Column(
+              child: Column(
                 children: [
                   Text(
                     "Hair growth is possible, you're in the right hands.",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 18,
+                      fontSize: size.width * 0.045,
                       fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: size.height * 0.02),
                   Text(
                     "RIGHT TO GROW SALE",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 24,
+                      fontSize: size.width * 0.06,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -121,64 +108,65 @@ class Home extends StatelessWidget {
                     "FLAT 30% OFF",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: size.width * 0.05,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: size.height * 0.01),
                   Text(
                     "USE CODE - TRAYA30",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
+                      fontSize: size.width * 0.04,
                     ),
                   ),
                   Text(
                     "10th - 12th Aug",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
+                      fontSize: size.width * 0.04,
                     ),
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: size.height * 0.02),
             Card(
-              margin: const EdgeInsets.symmetric(horizontal: 20.0),
+              margin: EdgeInsets.symmetric(horizontal: padding),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(padding),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                    Text(
                       "YOUR HAIR ANALYSIS REPORT",
-                      style: const TextStyle(
-                        fontSize: 18,
+                      style: TextStyle(
+                        fontSize: size.width * 0.05,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 10),
-                    const Text(
+                    SizedBox(height: size.height * 0.01),
+                    Text(
                       "Your hair analysis report is ready. Click below to view it.",
-                      style: const TextStyle(fontSize: 16),
+                      style: TextStyle(fontSize: size.width * 0.04),
                     ),
-                    const SizedBox(height: 10),
+                    SizedBox(height: size.height * 0.01),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.green, // Background color
-                        padding: const EdgeInsets.symmetric(vertical: 16.0),
+                        backgroundColor: Colors.green,
+                        padding:
+                            EdgeInsets.symmetric(vertical: size.height * 0.02),
                       ),
                       onPressed: () {},
-                      child: const Row(
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             "View Report",
-                            style: TextStyle(fontSize: 18),
+                            style: TextStyle(fontSize: size.width * 0.045),
                           ),
                         ],
                       ),
@@ -190,6 +178,16 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildIconColumn(BuildContext context, IconData icon, String label) {
+    final Size size = MediaQuery.of(context).size;
+    return Column(
+      children: [
+        Icon(icon, color: Colors.yellow, size: size.width * 0.08),
+        Text(label, style: TextStyle(fontSize: size.width * 0.03)),
+      ],
     );
   }
 }

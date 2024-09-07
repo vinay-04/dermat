@@ -15,14 +15,14 @@ enum PageType {
 }
 
 class BottomNavbar extends ConsumerWidget {
-  final List<Widget> pages = const [
+  final List<Widget> pages = [
     Home(),
     Products(),
-    Account(),
     Kit(),
+    Account(),
   ];
 
-  const BottomNavbar({Key? key}) : super(key: key);
+  BottomNavbar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

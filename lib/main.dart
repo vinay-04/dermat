@@ -1,4 +1,5 @@
 import 'package:dermat/bottom_navbar.dart';
+import 'package:dermat/screens/account_screen.dart';
 import 'package:dermat/screens/login.dart';
 import 'package:dermat/screens/onboarding.dart';
 import 'package:flutter/material.dart';
@@ -33,11 +34,12 @@ class MyApp extends ConsumerWidget {
           ? const SplashScreen()
           : authState == AuthState.unauthenticated
               ? const LoginScreen()
-              : const BottomNavbar(),
+              : BottomNavbar(),
       routes: <String, WidgetBuilder>{
         '/onboarding': (_) => const OnboardingScreen(),
         '/login': (_) => const LoginScreen(),
-        '/home': (_) => const BottomNavbar(),
+        '/home': (_) => BottomNavbar(),
+        '/account': (_) => Account(),
       },
     );
   }

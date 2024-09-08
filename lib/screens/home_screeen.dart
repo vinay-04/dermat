@@ -30,60 +30,63 @@ class Home extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(padding),
                   color: Colors.green,
-                  child: Column(
-                    children: [
-                      Text(
-                        "Hair growth is possible, you're in the right hands.",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: size.width * 0.045,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      SizedBox(height: size.height * 0.02),
-                      Text(
-                        "RIGHT TO GROW SALE",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: size.width * 0.06,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "FLAT 30% OFF",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: size.width * 0.05,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: size.height * 0.01),
-                      Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        child: Text(
-                          "USE CODE - TRAYA30",
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 12.0),
+                    child: Column(
+                      children: [
+                        Text(
+                          "Hair growth is possible, you're in the right hands.",
                           style: TextStyle(
-                            color: Colors.green,
-                            fontSize: size.width * 0.04,
+                            color: Colors.white,
+                            fontSize: size.width * 0.045,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(height: size.height * 0.02),
+                        Text(
+                          "RIGHT TO GROW SALE",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: size.width * 0.06,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                      ),
-                      SizedBox(height: size.height * 0.01),
-                      Text(
-                        "10th - 12th Aug",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: size.width * 0.04,
+                        Text(
+                          "FLAT 30% OFF",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: size.width * 0.05,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                    ],
+                        SizedBox(height: size.height * 0.01),
+                        Container(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: Text(
+                            "USE CODE - TRAYA30",
+                            style: TextStyle(
+                              color: Colors.green,
+                              fontSize: size.width * 0.04,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: size.height * 0.01),
+                        Text(
+                          "10th - 12th Aug",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: size.width * 0.04,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 // Image Section

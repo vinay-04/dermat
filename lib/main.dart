@@ -39,7 +39,7 @@ class MyApp extends ConsumerWidget {
         '/onboarding': (_) => const OnboardingScreen(),
         '/login': (_) => const LoginScreen(),
         '/home': (_) => BottomNavbar(),
-        '/account': (_) => Account(),
+        '/account': (_) => const Account(),
       },
     );
   }

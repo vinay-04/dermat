@@ -10,8 +10,8 @@ final pageindex = StateProvider<PageType>((ref) => PageType.home);
 enum PageType {
   home,
   products,
-  account,
   kit,
+  account,
 }
 
 class BottomNavbar extends ConsumerWidget {

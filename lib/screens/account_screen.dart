@@ -3,6 +3,8 @@ import 'package:dermat/screens/profile_screen.dart';
 import 'package:dermat/screens/help_support_screen.dart';
 
 class Account extends StatefulWidget {
+  const Account({super.key});
+
   @override
   _AccountState createState() => _AccountState();
 }
@@ -19,6 +21,7 @@ class _AccountState extends State<Account> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: _showProfile
           ? MyProfileScreen(onBackPressed: _toggleProfile)
           : AccountScreen(onProfilePressed: _toggleProfile),
@@ -37,7 +40,7 @@ class AccountScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        title: Row(
+        title: const Row(
           children: [
             CircleAvatar(
               backgroundColor: Color(0xFFB5E4CA),
@@ -125,7 +128,8 @@ class AccountScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildActionButton(IconData icon, String label, {VoidCallback? onPressed}) {
+  Widget _buildActionButton(IconData icon, String label,
+      {VoidCallback? onPressed}) {
     return Expanded(
       child: Card(
         color: Color(0xFFF1FDF5),
@@ -138,7 +142,8 @@ class AccountScreen extends StatelessWidget {
                 Icon(icon, color: Color(0xFF1F8B24)),
                 SizedBox(height: 4),
                 Text(label,
-                    style: TextStyle(fontSize: 12), textAlign: TextAlign.center),
+                    style: TextStyle(fontSize: 12),
+                    textAlign: TextAlign.center),
               ],
             ),
           ),

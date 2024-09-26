@@ -30,8 +30,8 @@ class LoginScreen extends ConsumerWidget {
                 SizedBox(height: 16),
                 _buildForgotPasswordLink(),
                 SizedBox(height: 32),
-                _buildSocialLoginSection(),
-                SizedBox(height: 24),
+                // _buildSocialLoginSection(),
+                // SizedBox(height: 24),
                 _buildSignUpLink(),
               ],
             ),
@@ -146,54 +146,54 @@ Widget _buildForgotPasswordLink() {
   );
 }
 
-Widget _buildSocialLoginSection() {
-  return Column(
-    children: [
-      Text(
-        'Or log in with',
-        style: TextStyle(color: Color(0xFF8E8E8E)),
-      ),
-      SizedBox(height: 16),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          _buildSocialLoginButton(
-            'assets/google_logo.svg',
-            'Google',
-            Color(0xFFDB4437),
-          ),
-          SizedBox(width: 16),
-          _buildSocialLoginButton(
-            'assets/facebook_logo.svg',
-            'Facebook',
-            Color(0xFF4267B2),
-          ),
-        ],
-      ),
-    ],
-  );
-}
+// Widget _buildSocialLoginSection() {
+//   return Column(
+//     children: [
+//       Text(
+//         'Or log in with',
+//         style: TextStyle(color: Color(0xFF8E8E8E)),
+//       ),
+//       SizedBox(height: 16),
+//       Row(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: [
+//           _buildSocialLoginButton(
+//             'assets/google_logo.svg',
+//             'Google',
+//             Color(0xFFDB4437),
+//           ),
+//           SizedBox(width: 16),
+//           _buildSocialLoginButton(
+//             'assets/facebook_logo.svg',
+//             'Facebook',
+//             Color(0xFF4267B2),
+//           ),
+//         ],
+//       ),
+//     ],
+//   );
+// }
 
-Widget _buildSocialLoginButton(String svgAsset, String label, Color color) {
-  return ElevatedButton.icon(
-    icon: SvgPicture.asset(
-      svgAsset,
-      width: 24,
-      height: 24,
-    ),
-    label: Text(label),
-    style: ElevatedButton.styleFrom(
-      backgroundColor: color,
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
-    ),
-    onPressed: () {
-      // Implement social login functionality
-    },
-  );
-}
+// Widget _buildSocialLoginButton(String svgAsset, String label, Color color) {
+//   return ElevatedButton.icon(
+//     icon: SvgPicture.asset(
+//       svgAsset,
+//       width: 24,
+//       height: 24,
+//     ),
+//     label: Text(label),
+//     style: ElevatedButton.styleFrom(
+//       backgroundColor: color,
+//       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+//       shape: RoundedRectangleBorder(
+//         borderRadius: BorderRadius.circular(12),
+//       ),
+//     ),
+//     onPressed: () {
+//       // Implement social login functionality
+//     },
+//   );
+// }
 
 Widget _buildSignUpLink() {
   return Row(

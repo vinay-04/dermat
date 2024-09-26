@@ -1,7 +1,10 @@
 import 'package:dermat/screens/account_screen.dart';
+import 'package:dermat/screens/antiaging_screen.dart';
+import 'package:dermat/screens/hair_screen.dart';
 import 'package:dermat/screens/home_screeen.dart';
 import 'package:dermat/screens/kit.dart';
 import 'package:dermat/screens/products.dart';
+import 'package:dermat/screens/skincare_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -16,10 +19,10 @@ enum PageType {
 
 class BottomNavbar extends ConsumerWidget {
   final List<Widget> pages = [
-    Home(),
-    Products(),
-    Kit(),
-    Account(),
+    HairScreen(),
+    SkincareScreen(),
+    AntiagingScreen(),
+    // Account(),
   ];
 
   BottomNavbar({Key? key}) : super(key: key);
@@ -30,20 +33,20 @@ class BottomNavbar extends ConsumerWidget {
     final tabitems = [
       const BottomNavigationBarItem(
         icon: Icon(Icons.home),
-        label: 'Home',
+        label: 'HairScreen',
       ),
       const BottomNavigationBarItem(
-        icon: Icon(Icons.add_box_outlined),
-        label: 'Products',
+        icon: Icon(Icons.boy_rounded),
+        label: 'SkinCare',
       ),
       const BottomNavigationBarItem(
-        icon: Icon(Icons.backpack),
-        label: 'Kit',
+        icon: Icon(Icons.elderly),
+        label: 'Antiaging',
       ),
-      const BottomNavigationBarItem(
-        icon: Icon(Icons.account_circle),
-        label: 'Account',
-      ),
+      // const BottomNavigationBarItem(
+      //   icon: Icon(Icons.account_circle),
+      //   label: 'Account',
+      // ),
     ];
     return Scaffold(
       body: pages[index.index],

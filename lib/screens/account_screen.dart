@@ -1,3 +1,4 @@
+import 'package:dermat/components/UserData.dart';
 import 'package:flutter/material.dart';
 import 'package:dermat/screens/profile_screen.dart';
 import 'package:dermat/screens/help_support_screen.dart';
@@ -60,7 +61,7 @@ class AccountScreen extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.all(16),
         children: [
-          _buildBuyKitCard(),
+          _buildBuyKitCard(context),
           SizedBox(height: 16),
           _buildQuickActionButtons(context),
           SizedBox(height: 16),
@@ -69,10 +70,23 @@ class AccountScreen extends StatelessWidget {
           _buildReadMoreTile()
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            showDragHandle: true,
+            scrollControlDisabledMaxHeightRatio: 0.8,
+            builder: (BuildContext context) {
+              return UserDataBottomSheet();
+            },
+          );
+        },
+        child: Icon(Icons.details),
+      ),
     );
   }
 
-  Widget _buildBuyKitCard() {
+  Widget _buildBuyKitCard(BuildContext context) {
     return Card(
       color: Color(0xFF1F8B24),
       child: Padding(

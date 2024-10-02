@@ -33,7 +33,7 @@ class BottomNavbar extends ConsumerWidget {
     final tabitems = [
       const BottomNavigationBarItem(
         icon: Icon(Icons.home),
-        label: 'HairScreen',
+        label: 'Hair',
       ),
       const BottomNavigationBarItem(
         icon: Icon(Icons.boy_rounded),

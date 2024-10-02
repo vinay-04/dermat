@@ -1,6 +1,9 @@
+import 'package:dermat/components/HProducts.dart';
 import 'package:dermat/components/hair/HairForm.dart';
 import 'package:dermat/components/hair/hair_services.dart';
+import 'package:dermat/screens/Cart.Dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class HairScreen extends StatefulWidget {
   HairScreen({super.key});
@@ -23,7 +26,11 @@ class _HairScreenState extends State<HairScreen> {
         title: const Text("Hair"),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => CartPage(),
+              ));
+            },
             icon: const Icon(
               Icons.shopping_bag_outlined,
               size: 32,
@@ -109,7 +116,6 @@ class _HairScreenState extends State<HairScreen> {
                                           InputDecoration(labelText: 'Name'),
                                     ),
                                     SizedBox(height: 16),
-
                                     // TextField for Email
                                     TextField(
                                       onChanged: (value) => setState(() {
@@ -196,6 +202,7 @@ class _HairScreenState extends State<HairScreen> {
               ],
             ),
             HairServices(size: size, padding: padding),
+            ProductScroll(),
           ],
         ),
       ),

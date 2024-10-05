@@ -1,7 +1,7 @@
 import 'package:dermat/components/HProducts.dart';
 import 'package:dermat/components/hair/HairForm.dart';
 import 'package:dermat/components/hair/hair_services.dart';
-import 'package:dermat/screens/Cart.Dart';
+import 'package:dermat/screens/cart.Dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

@@ -1,3 +1,4 @@
+import 'package:dermat/screens/cart.Dart';
 import 'package:flutter/material.dart';
 
 class SkincareScreen extends StatefulWidget {
@@ -11,6 +12,32 @@ class _SkincareScreenState extends State<SkincareScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xFFFF6347),
+        title: const Text("Skincare"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => CartPage(),
+              ));
+            },
+            icon: const Icon(
+              Icons.shopping_bag_outlined,
+              size: 32,
+            ),
+          ),
+          IconButton(
+            icon: const Icon(
+              Icons.account_circle,
+              size: 36,
+            ),
+            onPressed: () {
+              Navigator.pushNamed(context, '/account');
+            },
+          ),
+        ],
+      ),
       backgroundColor: Colors.orange[50],
       body: SingleChildScrollView(
         child: Column(
@@ -95,23 +122,28 @@ class _SkincareScreenState extends State<SkincareScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
-            child: Image.asset(treatment.imageUrl,)
-          ),
+              borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
+              child: Image.asset(
+                treatment.imageUrl,
+              )),
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(treatment.name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                Text(treatment.name,
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
                 SizedBox(height: 5),
                 Text(treatment.description, style: TextStyle(fontSize: 14)),
                 SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Duration: ${treatment.duration}', style: TextStyle(fontSize: 14)),
-                    Text('\$${treatment.price}', style: TextStyle(fontWeight: FontWeight.bold)),
+                    Text('Duration: ${treatment.duration}',
+                        style: TextStyle(fontSize: 14)),
+                    Text('\$${treatment.price}',
+                        style: TextStyle(fontWeight: FontWeight.bold)),
                   ],
                 ),
                 SizedBox(height: 10),
@@ -123,7 +155,8 @@ class _SkincareScreenState extends State<SkincareScreen> {
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFFFF6347),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
                     ),
                     child: Text('Book Now'),
                   ),
@@ -149,7 +182,8 @@ class _SkincareScreenState extends State<SkincareScreen> {
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 10),
-          Text('Address: 1 Mega Nu, Kota \nPhone: +62 83476982026\nEmail: metimebeauty@gmail.com'),
+          Text(
+              'Address: 1 Mega Nu, Kota \nPhone: +62 83476982026\nEmail: metimebeauty@gmail.com'),
           SizedBox(height: 20),
           Text('Recent Posts', style: TextStyle(fontSize: 18)),
           SizedBox(height: 10),
@@ -201,7 +235,8 @@ class Treatment {
 final treatments = [
   Treatment(
     name: 'Ultrasonic Scrubbing',
-    description: 'Removes dead skin cells and purifies pores using ultrasonic waves.',
+    description:
+        'Removes dead skin cells and purifies pores using ultrasonic waves.',
     duration: '45 Min',
     price: 45.00,
     imageUrl: 'assets/scrubbing.png',
@@ -236,7 +271,8 @@ final treatments = [
   ),
   Treatment(
     name: 'Facial LED Light Therapy',
-    description: 'Non-invasive treatment for collagen stimulation and acne reduction.',
+    description:
+        'Non-invasive treatment for collagen stimulation and acne reduction.',
     duration: '30 Min',
     price: 90.00,
     imageUrl: 'assets/facial.png',

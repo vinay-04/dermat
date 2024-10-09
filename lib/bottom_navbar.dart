@@ -51,9 +51,10 @@ class BottomNavbar extends ConsumerWidget {
     return Scaffold(
       body: pages[index.index],
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed, // Set the type to fixed
+        type: BottomNavigationBarType.fixed,
         items: tabitems,
         currentIndex: index.index,
+        selectedItemColor: const Color(0xFFFF6347),
         onTap: (int tappedIndex) {
           ref.read(pageindex.notifier).state = PageType.values[tappedIndex];
         },

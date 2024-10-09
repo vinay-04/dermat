@@ -23,6 +23,7 @@ class _HairScreenState extends State<HairScreen> {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xFFFF6347),
         title: const Text("Hair"),
         actions: [
           IconButton(
@@ -55,6 +56,7 @@ class _HairScreenState extends State<HairScreen> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                SizedBox(height: size.height * 0.02),
                 Container(
                   padding: EdgeInsets.all(padding),
                   color: const Color(0xFFFF6347),

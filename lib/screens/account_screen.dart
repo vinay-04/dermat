@@ -45,7 +45,7 @@ class AccountScreen extends StatelessWidget {
           children: [
             CircleAvatar(
               backgroundColor: Color(0xFFB5E4CA),
-              child: Text('J', style: TextStyle(color: Color(0xFF1F8B24))),
+              child: Text('J', style: TextStyle(color: Color(0xFFFF6347))),
             ),
             SizedBox(width: 8),
             Text('jeevan', style: TextStyle(color: Colors.black)),
@@ -88,7 +88,7 @@ class AccountScreen extends StatelessWidget {
 
   Widget _buildBuyKitCard(BuildContext context) {
     return Card(
-      color: Color(0xFF1F8B24),
+      color: Color(0xFFFF6347),
       child: Padding(
         padding: EdgeInsets.all(16),
         child: Column(
@@ -111,7 +111,7 @@ class AccountScreen extends StatelessWidget {
             ElevatedButton(
               child: Text('Buy Now'),
               style: ElevatedButton.styleFrom(
-                foregroundColor: Color(0xFF1F8B24),
+                foregroundColor: Color(0xFFFF6347),
                 backgroundColor: Color(0xFFB5E4CA),
               ),
               onPressed: () {},
@@ -153,7 +153,7 @@ class AccountScreen extends StatelessWidget {
             padding: EdgeInsets.all(8),
             child: Column(
               children: [
-                Icon(icon, color: Color(0xFF1F8B24)),
+                Icon(icon, color: Color(0xFFFF6347)),
                 SizedBox(height: 4),
                 Text(label,
                     style: TextStyle(fontSize: 12),

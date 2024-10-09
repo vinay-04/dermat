@@ -36,7 +36,7 @@ class MyProfileScreen extends StatelessWidget {
             SizedBox(height: 16),
             Text('jeevan',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-            Text('69, Male',
+            Text('22, Male',
                 style: TextStyle(fontSize: 16, color: Colors.grey)),
             SizedBox(height: 24),
             _buildInfoTile('Email ID', ''),

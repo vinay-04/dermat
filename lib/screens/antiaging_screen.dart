@@ -1,3 +1,4 @@
+import 'package:dermat/screens/cart.Dart';
 import 'package:flutter/material.dart';
 
 class AntiagingScreen extends StatefulWidget {
@@ -13,8 +14,19 @@ class _AntiagingScreenState extends State<AntiagingScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Anti-Aging"),
-        backgroundColor:const Color(0xFFFF6347),
+        backgroundColor: const Color(0xFFFF6347),
         actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => CartPage(),
+              ));
+            },
+            icon: const Icon(
+              Icons.shopping_bag_outlined,
+              size: 32,
+            ),
+          ),
           IconButton(
             icon: const Icon(
               Icons.account_circle,
@@ -46,7 +58,6 @@ class _AntiagingScreenState extends State<AntiagingScreen> {
     );
   }
 
-  // Header Section
   Widget _buildHeaderSection() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,7 +109,6 @@ class _AntiagingScreenState extends State<AntiagingScreen> {
     );
   }
 
-  // Technique Section
   Widget _buildTechniqueSection() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -167,7 +177,8 @@ class _AntiagingScreenState extends State<AntiagingScreen> {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(product.imagePath, height: 100, width: 100, fit: BoxFit.cover),
+                  child: Image.asset(product.imagePath,
+                      height: 100, width: 100, fit: BoxFit.cover),
                 ),
                 SizedBox(width: 16),
                 Expanded(
@@ -176,7 +187,8 @@ class _AntiagingScreenState extends State<AntiagingScreen> {
                     children: [
                       Text(
                         product.name,
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 5),
                       Text(product.description),
@@ -190,7 +202,9 @@ class _AntiagingScreenState extends State<AntiagingScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 _buildRating(product.rating),
-                Text('\$${product.price.toStringAsFixed(2)}', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                Text('\$${product.price.toStringAsFixed(2)}',
+                    style:
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
               ],
             ),
             SizedBox(height: 10),

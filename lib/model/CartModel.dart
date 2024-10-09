@@ -24,12 +24,7 @@ class CartProduct {
 }
 
 class CartNotifier extends StateNotifier<List<CartProduct>> {
-  CartNotifier()
-      : super([
-          CartProduct(id: '1', name: 'Product 1', price: 10.0, quantity: 2),
-          CartProduct(id: '2', name: 'Product 2', price: 20.0, quantity: 1),
-          CartProduct(id: '3', name: 'Product 3', price: 15.0, quantity: 3),
-        ]);
+  CartNotifier() : super([]);
 
   void addCartProduct(CartProduct cartProduct) {
     if (state.any((product) => product.id == cartProduct.id)) {

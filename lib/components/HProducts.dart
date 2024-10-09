@@ -8,20 +8,25 @@ class ProductScroll extends ConsumerWidget {
   final List<ProductModel> products = [
     ProductModel(
         productId: 1,
-        productName: 'Product 1',
+        productName: 'Tressheal',
         productPrice: 10.0,
-        productDescription: 'Description of Product 1'),
+        productDescription: '5% Minoxidil topical application hair serum'),
     ProductModel(
         productId: 2,
-        productName: 'Product 2',
+        productName: 'Hairmox ultra',
         productPrice: 15.0,
-        productDescription: 'Description of Product 2'),
+        productDescription:
+            '5% Minoxidil+0.1% Finasteride concentrated hair serum'),
     ProductModel(
         productId: 3,
-        productName: 'Product 3',
+        productName: 'Organic flax seed',
         productPrice: 20.0,
-        productDescription: 'Description of Product 3'),
-    // Add more products here
+        productDescription: '250 gm'),
+    ProductModel(
+        productId: 4,
+        productName: 'Saw palmetto supplement',
+        productPrice: 20.0,
+        productDescription: ''),
   ];
 
   @override

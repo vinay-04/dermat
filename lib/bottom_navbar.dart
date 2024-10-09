@@ -1,9 +1,5 @@
-import 'package:dermat/screens/account_screen.dart';
 import 'package:dermat/screens/antiaging_screen.dart';
 import 'package:dermat/screens/hair_screen.dart';
-import 'package:dermat/screens/home_screeen.dart';
-import 'package:dermat/screens/kit.dart';
-import 'package:dermat/screens/products.dart';
 import 'package:dermat/screens/skincare_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

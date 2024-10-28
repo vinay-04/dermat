@@ -1,20 +1,6 @@
 import 'package:dermat/screens/product_details.dart';
 import 'package:flutter/material.dart';
 
-class ProductModel {
-  final int productId;
-  final String productName;
-  final double productPrice;
-  final String productDescription;
-
-  ProductModel({
-    required this.productId,
-    required this.productName,
-    required this.productPrice,
-    required this.productDescription,
-  });
-}
-
 class Product extends StatelessWidget {
   const Product({
     super.key,

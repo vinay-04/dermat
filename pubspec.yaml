@@ -62,6 +62,19 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/productImage.png
+    - assets/scrubbing.png
+    - assets/derma.png
+    - assets/micro.png
+    - assets/carbon.png
+    - assets/miniFacial.png
+    - assets/facial.png
+    - assets/insta1.png
+    - assets/insta2.png
+    - assets/insta3.png
+    - assets/headerImage.png
+    - assets/serum.png
+    - assets/eyeGel.png
+    - assets/nightCream.png
     - assets/
 
   #   - images/a_dot_burr.jpeg

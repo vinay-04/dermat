@@ -1,3 +1,4 @@
+import 'package:dermat/model/ProductModel.dart';
 import 'package:flutter/material.dart';
 import 'package:dermat/components/Product.dart';
 
